@@ -333,8 +333,8 @@ async function initApp() {
     status: document.getElementById("status").value,
     mode: editIndex !== null ? "edit" : "add"
   };
-  // ==== VALIDASI KODE SUDAH ADA ====
-if (isEditMode) {
+// ==== VALIDASI KODE SUDAH ADA ====
+if (editIndex !== null) {
   // EDIT MODE
   if (isKodeExists(it.kode, editIndex)) {
     alert("Kode barang ini sudah digunakan oleh item lain!");
@@ -346,6 +346,9 @@ if (isEditMode) {
     alert("Kode barang sudah ada! Gunakan kode lain.");
     return;
   }
+}
+function onEdit(idx) {
+  openModal(true, idx);
 }
 
 
