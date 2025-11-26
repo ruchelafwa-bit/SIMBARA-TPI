@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SIMBARA - Elegant Theme</title>
+<title>Inventaris Kantor - Elegant Theme</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://apis.google.com/js/api.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -14,8 +14,8 @@
 <body class="font-sans text-gray-900" onload="initApp()">
 
 <script>
-  const APP_TITLE = 'SIMBARA';
-  const APP_SUBTITLE = 'Sistem Manajemen Barang Negara';
+  const APP_TITLE = 'Inventaris Kantor';
+  const APP_SUBTITLE = 'Sistem Manajemen Barang';
   const APP_LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke="none" class="h-7 w-7"><path d="M3 3v18l9-4 9 4V3H3z"/></svg>`;
 </script>
 
@@ -431,7 +431,7 @@ function applyFilters() {
     const totalJml = items.reduce((s, it) => s + (it.jumlah || 0), 0);
     const totalElektronik = items.filter(i => i.kategori === 'Elektronik').reduce((s, it) => s + (it.jumlah || 0), 0);
     const totalFurniture = items.filter(i => i.kategori === 'Furniture').reduce((s, it) => s + (it.jumlah || 0), 0);
-    const totalNilai = items.reduce((s, it) => s + ((it.harga || 0) * (it.jumlah || 1)), 0);
+    const totalNilai = items.reduce((sum, i) => sum + i.harga, 0);
 
 document.getElementById('totalBarang').innerText = totalJml;
 document.getElementById('totalElektronik').innerText = totalElektronik;
@@ -540,4 +540,3 @@ document.getElementById('totalNilai').innerText = formatRp(totalNilai);
 
 </body>
 </html>
-
