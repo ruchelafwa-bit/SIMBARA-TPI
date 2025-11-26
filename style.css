@@ -1,0 +1,33 @@
+  body {
+    background: #e6f0ff;
+  }
+  nav {
+    background: linear-gradient(90deg, #002b7a 0%, #1a3ea1 100%);
+  }
+
+  /* Modal Scrollbar */
+  #modal > div::-webkit-scrollbar {
+    width: 8px;
+  }
+  #modal > div::-webkit-scrollbar-thumb {
+    background-color: #1a3ea1;
+    border-radius: 4px;
+  }
+  #modal > div::-webkit-scrollbar-track {
+    background: #ecf0ff;
+  }
+
+  /* Dashboard Background Image + blur */
+  #dashboardBackground {
+    position: fixed;
+    top: 64px; /* tinggi nav */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    opacity: 0.3;
+    z-index: -1;
+  }
