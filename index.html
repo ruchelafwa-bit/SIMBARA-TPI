@@ -347,9 +347,6 @@ if (editIndex !== null) {
     return;
   }
 }
-function onEdit(idx) {
-  openModal(true, idx);
-}
 
 
   await fetch("https://script.google.com/macros/s/AKfycbzIqxrqE-hR3fORrw5kf-tp86I8yewW88BX0MNhx_ZtYIncW89waGYW02X8jQF2uBV_fg/exec", {
@@ -362,6 +359,10 @@ function onEdit(idx) {
   updateDashboard();
   closeModal();
 }
+function onEdit(idx) {
+  openModal(true, idx);
+}
+
 async function onDelete(idx) {
   if (!confirm("Hapus barang ini?")) return;
 
